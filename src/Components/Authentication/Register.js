@@ -134,7 +134,7 @@ const Register = () => {
             )}
 
             <input
-              className="btn bg-blue-900 text-white w-full my-4"
+              className="btn bg-red-400 text-black w-full my-4"
               value="Sign up"
               type="submit"
             />
