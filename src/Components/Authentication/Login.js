@@ -39,7 +39,7 @@ const Login = () => {
   const handleforgetPassword = (data) => {
     forgetPassword(data.email)
       .then(() => {
-        toast.success("Sent");
+        toast.success("Check your email please");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -104,12 +104,7 @@ const Login = () => {
               {loginError && <p className="text-red-600">{loginError}</p>}
             </div>
           </form>
-          <button
-            className="label-text text-black"
-            onClick={handleSubmit(handleforgetPassword)}
-          >
-            Forget Password?
-          </button>
+          <Link to="/forgetpassword">Forget Password?</Link>
           <p className="text-blue-900">
             New here?{" "}
             <Link className="text-blue-700" to="/register">

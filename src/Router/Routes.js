@@ -10,6 +10,7 @@ import CheckDetails from "../Components/CheckDetails";
 import AddService from "../Components/AddService/AddService";
 import DashBoard from "../Components/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoute";
+import ForgetPassword from "../Components/Authentication/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/forgetpassword",
+        element: <ForgetPassword></ForgetPassword>,
       },
       {
         path: "/checkDetails",

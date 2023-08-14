@@ -91,6 +91,17 @@ const Register = () => {
 
             <div className="form-control w-full max-w-xs">
               <label className="label">
+                <span className="label-text text-black">Phone</span>
+              </label>
+              <input
+                className="input text-black input-bordered w-full max-w-xs"
+                {...register("phone", { required: "phone is required" })}
+                type="phone"
+              />
+            </div>
+
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
                 <span className="label-text text-black">
                   Select your picture
                 </span>
@@ -121,7 +132,6 @@ const Register = () => {
                     message: "password must be 6 char long",
                   },
                   pattern: {
-                    value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/,
                     message: "password must be strong",
                   },
                 })}
