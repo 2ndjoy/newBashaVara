@@ -16,14 +16,6 @@ function FilterBox() {
   const [formData, setFormData] = useState(initialFormData);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-
-    fetch(
-      `http://localhost:5000/specific?serviceLocation=${formData.location}&&size=${formData.size}`
-    )
-      .then((res) => res.json())
-      .then((data) => setData(data));
-
     // console.log(data);
   };
 
@@ -109,69 +101,6 @@ function FilterBox() {
           </button>
         </div>
       </form>
-
-      <div className="flex flex-wrap gap-2 justify-center mt-12">
-        {loading ? (
-          <p>Loading....</p>
-        ) : dataa.length === 0 ? (
-          <p>
-            No data Available. Please search or See all{" "}
-            <Link to="/services" className="text-blue-900">
-              services
-            </Link>
-          </p>
-        ) : (
-          dataa.map((dat) => (
-            <div>
-              <div>
-                <div className="card card-compact w-50 h-30 bg-slate-400 text-black shadow-xl">
-                  <figure>
-                    <img
-                      src={dat.serviceImage}
-                      alt="Shoes"
-                      className="h-36 w-56"
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <p className="bold">
-                      <span className="font-bold">Location:</span>{" "}
-                      {dat.serviceLocation}
-                    </p>
-                    <p className="bold">
-                      <span className="font-bold">Size: </span>
-                      {dat.size}
-                    </p>
-                    <p className="bold">
-                      <span className="font-bold">Rent fee:</span> {dat.rentFee}
-                    </p>
-                    <p className="bold">
-                      <span className="font-bold">Available from</span>{" "}
-                      {dat.availability}
-                    </p>
-                    <p className="bold">
-                      <span className="font-bold">Owner: </span>
-                      {dat.renterName}
-                    </p>
-                    <p className="bold">
-                      <span className="font-bold">Contact: </span>
-                      {dat.renterPhoneNumber}
-                    </p>
-                    <p>
-                      <span className="font-bold">Details: </span>
-                      {dat.description}
-                    </p>
-                    <div className="card-actions justify-end">
-                      <Link to="/checkDetails">
-                        <button className="btn btn-primary">Check</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
     </div>
   );
 }

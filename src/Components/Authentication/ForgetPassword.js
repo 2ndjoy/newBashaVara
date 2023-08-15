@@ -11,7 +11,7 @@ const ForgetPassword = () => {
 
     forgetPassword(email)
       .then(() => {
-        toast.success("Check your email pleaseSent");
+        toast.success("Check your email please");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -20,19 +20,6 @@ const ForgetPassword = () => {
         // ..
       });
   };
-
-  //   const handleforgetPassword = (data) => {
-  //     forgetPassword(data.email)
-  //       .then(() => {
-  //         toast.success("Check your email pleaseSent");
-  //       })
-  //       .catch((error) => {
-  //         const errorCode = error.code;
-  //         const errorMessage = error.message;
-  //         toast.error(errorMessage);
-  //         // ..
-  //       });
-  //   };
 
   return (
     <div>
