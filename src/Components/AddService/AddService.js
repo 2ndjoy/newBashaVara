@@ -15,6 +15,7 @@ const AddService = () => {
   const handleAddService = (data) => {
     console.log(data);
   };
+
   return (
     <div className="grid  justify-center py-11">
       <div className="w-96 p-7">

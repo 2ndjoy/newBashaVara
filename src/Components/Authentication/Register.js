@@ -23,29 +23,31 @@ const Register = () => {
   //   const imageHostKEy = process.env.REACT_APP_IMGB_APIKEY;
   // console.log(imageHostKEy);
   const handleSignUp = (data) => {
-    // console.log(imageHostKEy)
     const photo = data.photo[0];
     const formData = new FormData();
     formData.append("image", photo);
-
-    const url = `https://api.imgbb.com/1/upload?key=94c2a478e54e97d802b6d035fdda4286`;
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imgData) => {
-        createUser(data.email, data.password).then((result) => {
-          const user = result.user;
-          console.log(user);
-          // saveUser(data.email, data.name);
-          updateUserProfile(data.name, imgData.data.display_url).then(
-            toast.success("Account created successfully")
-          );
-          // setLoading(false);
-          navigate(from, { replace: true }).catch((err) => console.log(err));
+    if (data.password !== data.confirmpassword) {
+      setsignUpError("Pass doesnot match");
+    } else {
+      const url = `https://api.imgbb.com/1/upload?key=94c2a478e54e97d802b6d035fdda4286`;
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((imgData) => {
+          createUser(data.email, data.password).then((result) => {
+            const user = result.user;
+            console.log(user);
+            // saveUser(data.email, data.name);
+            updateUserProfile(data.name, imgData.data.display_url).then(
+              toast.success("Account created successfully")
+            );
+            // setLoading(false);
+            navigate(from, { replace: true }).catch((err) => console.log(err));
+          });
         });
-      });
+    }
     // console.log(data)
   };
 
@@ -140,6 +142,26 @@ const Register = () => {
             {errors.password && (
               <p role="alert" className="text-warning">
                 {errors.password.message}
+              </p>
+            )}
+
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text text-black">Confirm Password</span>
+              </label>
+              <input
+                className="input text-black input-bordered w-full max-w-xs"
+                type="password"
+                {...register("confirmpassword", {
+                  required: "Confirm Password is required",
+                })}
+                // value={confirmPassword}
+                // onChange={handleConfirmPasswordChange}
+              />
+            </div>
+            {errors.confirmPassword && (
+              <p role="alert" className="text-warning">
+                {errors.confirmPassword.message}
               </p>
             )}
 
