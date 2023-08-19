@@ -12,6 +12,7 @@ import DashBoard from "../Components/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassword from "../Components/Authentication/ForgetPassword";
 import HomeServices from "../Components/HomeServices/HomeServices";
+import VerifyYourEmail from "../Components/Authentication/VerifyYourEmail";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/forgetpassword",
         element: <ForgetPassword></ForgetPassword>,
+      },
+      {
+        path: "/verifyemail",
+        element: <VerifyYourEmail></VerifyYourEmail>,
       },
       {
         path: "/checkDetails",

@@ -31,33 +31,34 @@ const Register = () => {
   //   const imageHostKEy = process.env.REACT_APP_IMGB_APIKEY;
   // console.log(imageHostKEy);
   const handleSignUp = (data) => {
-    const photo = data.photo[0];
-    const formData = new FormData();
-    formData.append("image", photo);
-    if (data.password !== data.confirmpassword) {
-      setsignUpError("Pass doesnot match");
-    } else {
-      const url = `https://api.imgbb.com/1/upload?key=94c2a478e54e97d802b6d035fdda4286`;
-      fetch(url, {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((imgData) => {
-          createUser(data.email, data.password).then((result) => {
-            const user = result.user;
-            console.log(user);
-            // saveUser(data.email, data.name);
-            updateUserProfile(data.name, imgData.data.display_url).then(
-              toast.success("Account created successfully")
-            );
-            // handleEmailVerification();
-            // setLoading(false);
-            navigate(from, { replace: true }).catch((err) => console.log(err));
-          });
-        });
-    }
+    // const photo = data.photo[0];
+    // const formData = new FormData();
+    // formData.append("image", photo);
+    // if (data.password !== data.confirmpassword) {
+    //   setsignUpError("Pass doesnot match");
+    // } else {
+    //   const url = `https://api.imgbb.com/1/upload?key=94c2a478e54e97d802b6d035fdda4286`;
+    //   fetch(url, {
+    //     method: "POST",
+    //     body: formData,
+    //   })
+    //     .then((res) => res.json())
+    //     .then((imgData) => {
+    //       createUser(data.email, data.password).then((result) => {
+    //         const user = result.user;
+    //         console.log(user);
+    //         // saveUser(data.email, data.name);
+    //         updateUserProfile(data.name, imgData.data.display_url).then(
+    //           toast.success("Account created successfully")
+    //         );
+    //         // handleEmailVerification();
+    //         // setLoading(false);
+    //         navigate(from, { replace: true }).catch((err) => console.log(err));
+    //       });
+    //     });
+    // }
     // console.log(data)
+    navigate("/verifyemail");
   };
 
   return (
