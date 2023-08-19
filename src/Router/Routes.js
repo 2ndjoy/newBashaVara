@@ -11,6 +11,7 @@ import AddService from "../Components/AddService/AddService";
 import DashBoard from "../Components/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassword from "../Components/Authentication/ForgetPassword";
+import HomeServices from "../Components/HomeServices/HomeServices";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/addservices",
         element: <AddService></AddService>,
+      },
+      {
+        path: "/homeservices",
+        element: <HomeServices></HomeServices>,
       },
       {
         path: "/login",

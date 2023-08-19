@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
@@ -26,6 +27,9 @@ const AuthProvider = ({ children }) => {
       displayName: name,
       photoURL: photo,
     });
+  };
+  const verifyEmail = () => {
+    return sendEmailVerification(auth.currentUser);
   };
   const signIn = (email, password) => {
     setLoading(true);
@@ -53,6 +57,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     createUser,
     updateUserProfile,
+    verifyEmail,
     user,
     loading,
     signIn,

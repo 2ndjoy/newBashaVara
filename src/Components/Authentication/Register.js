@@ -4,8 +4,10 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../UserContext/AuthProvider";
 import signupimg from "../imagess/signup.avif";
+import { error } from "daisyui/src/colors";
 const Register = () => {
-  const { createUser, updateUserProfile, setLoading } = useContext(AuthContext);
+  const { createUser, updateUserProfile, verifyEmail, setLoading } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,6 +21,12 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const [signUpError, setsignUpError] = useState("");
+
+  const handleEmailVerification = () => {
+    verifyEmail()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   //   const imageHostKEy = process.env.REACT_APP_IMGB_APIKEY;
   // console.log(imageHostKEy);
@@ -43,6 +51,7 @@ const Register = () => {
             updateUserProfile(data.name, imgData.data.display_url).then(
               toast.success("Account created successfully")
             );
+            handleEmailVerification();
             // setLoading(false);
             navigate(from, { replace: true }).catch((err) => console.log(err));
           });
@@ -66,7 +75,13 @@ const Register = () => {
               </label>
               <input
                 className="input text-black input-bordered w-full max-w-xs"
-                {...register("name", { required: "Name is required" })}
+                {...register("name", {
+                  required: "Name is required",
+                  pattern: {
+                    value: /^[A-Za-z]+$/,
+                    message: "Please enter a valid name with letters only",
+                  },
+                })}
                 type="text"
               />
             </div>
@@ -98,7 +113,7 @@ const Register = () => {
               <input
                 className="input text-black input-bordered w-full max-w-xs"
                 {...register("phone", { required: "phone is required" })}
-                type="phone"
+                type="number"
               />
             </div>
 
