@@ -51,7 +51,7 @@ const Register = () => {
             updateUserProfile(data.name, imgData.data.display_url).then(
               toast.success("Account created successfully")
             );
-            handleEmailVerification();
+            // handleEmailVerification();
             // setLoading(false);
             navigate(from, { replace: true }).catch((err) => console.log(err));
           });
