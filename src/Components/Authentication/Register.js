@@ -34,9 +34,12 @@ const Register = () => {
     // const photo = data.photo[0];
     // const formData = new FormData();
     // formData.append("image", photo);
-    // if (data.password !== data.confirmpassword) {
-    //   setsignUpError("Pass doesnot match");
-    // } else {
+    if (data.password !== data.confirmpassword) {
+      setsignUpError("Pass doesnot match");
+    } else {
+      navigate("/verifyemail");
+    }
+
     //   const url = `https://api.imgbb.com/1/upload?key=94c2a478e54e97d802b6d035fdda4286`;
     //   fetch(url, {
     //     method: "POST",
@@ -58,7 +61,6 @@ const Register = () => {
     //     });
     // }
     // console.log(data)
-    navigate("/verifyemail");
   };
 
   return (
@@ -79,7 +81,7 @@ const Register = () => {
                 {...register("name", {
                   required: "Name is required",
                   pattern: {
-                    value: /^[A-Za-z]+$/,
+                    value: /^[A-Za-z\s]+$/,
                     message: "Please enter a valid name with letters only",
                   },
                 })}
