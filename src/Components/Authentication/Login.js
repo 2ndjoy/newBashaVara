@@ -26,7 +26,13 @@ const Login = () => {
         const user = result.user;
         // console.log(user);
         setLoginemail(data.email);
-        navigate(from, { replace: true });
+        if (user.emailVerified) {
+          navigate(from, { replace: true });
+          setLoading(false);
+        } else {
+          toast.error("Please verify email");
+          setLoading(false);
+        }
         console.log(data.email, data.password);
       })
       .catch((error) => {
