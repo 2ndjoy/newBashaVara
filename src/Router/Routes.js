@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Components/Home/Home";
-
-import Item3 from "../Components/Item3";
 import Login from "../Components/Authentication/Login";
 import Register from "../Components/Authentication/Register";
 import Services from "../Components/Services/Services";
@@ -12,7 +10,6 @@ import DashBoard from "../Components/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassword from "../Components/Authentication/ForgetPassword";
 import HomeServices from "../Components/HomeServices/HomeServices";
-import VerifyYourEmail from "../Components/Authentication/VerifyYourEmail";
 
 const router = createBrowserRouter([
   {
@@ -47,10 +44,7 @@ const router = createBrowserRouter([
         path: "/forgetpassword",
         element: <ForgetPassword></ForgetPassword>,
       },
-      {
-        path: "/verifyemail",
-        element: <VerifyYourEmail></VerifyYourEmail>,
-      },
+
       {
         path: "/checkDetails",
         element: (

@@ -31,6 +31,7 @@ const HomeServices = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">Cleaning Services 1</h2>
+            <h2 className="card-title">Price: 2000tk</h2>
 
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Check</button>
@@ -46,6 +47,7 @@ const HomeServices = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">Cleaning Services 2</h2>
+            <h2 className="card-title">Price: 2000tk</h2>
 
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Check</button>
@@ -61,6 +63,7 @@ const HomeServices = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">Cleaning Services 3</h2>
+            <h2 className="card-title">Price: 2000tk</h2>
 
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Check</button>
