@@ -76,7 +76,7 @@ function FilterBox() {
             htmlFor="size"
             className="block text-slate-100-700 font-bold mb-2"
           >
-            <p className="text-white">Size</p>
+            <p className="text-white">Apartment Size</p>
           </label>
           <select
             name="size"
