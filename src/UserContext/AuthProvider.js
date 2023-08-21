@@ -29,6 +29,8 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
+
+  // calling verify email
   const verifyEmail = () => {
     setLoading(false);
     return sendEmailVerification(auth.currentUser);
@@ -59,7 +61,7 @@ const AuthProvider = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
-
+  // exporting functions
   const authInfo = {
     createUser,
     updateUserProfile,

@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../UserContext/AuthProvider";
 import signupimg from "../imagess/signup.avif";
-import { error } from "daisyui/src/colors";
 const Register = () => {
+  // importing verify email function from authprovider
   const { createUser, updateUserProfile, verifyEmail, setLoading } =
     useContext(AuthContext);
 
@@ -21,7 +21,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const [signUpError, setsignUpError] = useState("");
-
+  // declaring function to activate verify email
   const handleEmailVerification = () => {
     verifyEmail()
       .then(() => {})
@@ -50,7 +50,7 @@ const Register = () => {
               console.log(user);
               // saveUser(data.email, data.name);
               updateUserProfile(data.name, imgData.data.display_url);
-
+              // calling handle email verification
               handleEmailVerification();
               navigate("/login");
 
