@@ -10,6 +10,9 @@ import DashBoard from "../Components/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassword from "../Components/Authentication/ForgetPassword";
 import HomeServices from "../Components/HomeServices/HomeServices";
+import MyServices from "../Components/DashBoard/MyServices";
+import MyOrders from "../Components/DashBoard/MyOrders";
+import MyProfile from "../Components/DashBoard/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +61,18 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashBoard></DashBoard>,
+  },
+  {
+    path: "/dashboard/myservices",
+    element: <MyServices></MyServices>,
+  },
+  {
+    path: "/dashboard/myorders",
+    element: <MyOrders></MyOrders>,
+  },
+  {
+    path: "/dashboard/myprofile",
+    element: <MyProfile></MyProfile>,
   },
 ]);
 

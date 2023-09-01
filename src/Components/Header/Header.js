@@ -79,9 +79,20 @@ const Header = () => {
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link to="/dashboard" className="justify-between">
-                    Go to Dashboard
-                  </Link>
+                  <details className="dropdown mb-32">
+                    <summary className="m-1 ">Dashboard</summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                      <li>
+                        <Link to="/dashboard/myservices">My services</Link>
+                      </li>
+                      <li>
+                        <Link to="/dashboard/myorders">My orders</Link>
+                      </li>
+                      <li>
+                        <Link to="/dashboard/myprofile">My profile</Link>
+                      </li>
+                    </ul>
+                  </details>
                 </li>
                 <li className="mt-2">
                   <button
