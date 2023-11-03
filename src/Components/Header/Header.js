@@ -80,16 +80,19 @@ const Header = () => {
               >
                 <li>
                   <details className="dropdown mb-32">
-                    <summary className="m-1 ">Dashboard</summary>
+                    <summary className="m-1 ">
+                      {" "}
+                      <b>Dashboard</b>
+                    </summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                       <li>
-                        <Link to="/dashboard/myservices">My services</Link>
+                        <Link to="/myservices">My services</Link>
                       </li>
                       <li>
-                        <Link to="/dashboard/myorders">My orders</Link>
+                        <Link to="/myorders">My orders</Link>
                       </li>
                       <li>
-                        <Link to="/dashboard/myprofile">My profile</Link>
+                        <Link to="/myprofile">My profile</Link>
                       </li>
                     </ul>
                   </details>

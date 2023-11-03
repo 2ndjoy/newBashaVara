@@ -56,23 +56,19 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/myservices",
+        element: <MyServices></MyServices>,
+      },
+      {
+        path: "/myorders",
+        element: <MyOrders></MyOrders>,
+      },
+      {
+        path: "/myprofile",
+        element: <MyProfile></MyProfile>,
+      },
     ],
-  },
-  {
-    path: "/dashboard",
-    element: <DashBoard></DashBoard>,
-  },
-  {
-    path: "/dashboard/myservices",
-    element: <MyServices></MyServices>,
-  },
-  {
-    path: "/dashboard/myorders",
-    element: <MyOrders></MyOrders>,
-  },
-  {
-    path: "/dashboard/myprofile",
-    element: <MyProfile></MyProfile>,
   },
 ]);
 
