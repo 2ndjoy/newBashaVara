@@ -17,7 +17,7 @@ const MyProfile = () => {
             <p>
               <b>Email: </b> peterparker@gmail.com
             </p>
-            <button className="btn btn-primary mt-5">Get Started</button>
+            <button className="btn btn-success mt-5">Edit</button>
           </div>
         </div>
       </div>

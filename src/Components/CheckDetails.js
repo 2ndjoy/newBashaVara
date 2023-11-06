@@ -32,7 +32,7 @@ const CheckDetails = () => {
           <br />
           <button className="btn mt-5">Send</button>
         </div>
-        <div className="mt-9 pt-9">
+        <div className="lg:mt-0 mt-9 lg:pt-0 pt-9">
           <b>Other's Review:</b>
           <hr />
           <br />
