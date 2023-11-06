@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../UserContext/AuthProvider";
 import { Link } from "react-router-dom";
+import Cards from "../Services/Cards";
 
 function FilterBox() {
   const { user, loading } = useContext(AuthContext);
@@ -91,15 +92,50 @@ function FilterBox() {
             <option value="large">Large</option>
           </select>
         </div>
-
+        {/* The button to open modal */}
         <div className="flex items-center justify-center">
+          <label htmlFor="my_modal_7" className="btn btn-primary">
+            Search
+          </label>
+        </div>
+
+        {/* Put this part before </body> tag */}
+        <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box">
+            <div className="bg-base p-3 m-3 grid justify-center">
+              <Cards></Cards>
+              <Cards></Cards>
+              <Cards></Cards>
+              <Cards></Cards>
+              <Cards></Cards>
+              <Cards></Cards>
+              <div className="flex justify-end">
+                <label
+                  className="modal-backdrop btn btn-active btn-error "
+                  htmlFor="my_modal_7"
+                >
+                  Close
+                </label>
+              </div>
+            </div>
+          </div>
+          <label
+            className="modal-backdrop btn btn-active btn-error "
+            htmlFor="my_modal_7"
+          >
+            Close
+          </label>
+        </div>
+
+        {/* <div className="flex items-center justify-center">
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Search
           </button>
-        </div>
+        </div> */}
       </form>
     </div>
   );
