@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoUploadBox from "./PhotoUploadBox ";
 
 const MyProfile = () => {
   return (
@@ -17,7 +18,39 @@ const MyProfile = () => {
             <p>
               <b>Email: </b> peterparker@gmail.com
             </p>
-            <button className="btn btn-success mt-5">Edit</button>
+            <button className="btn btn-primary mt-5">Edit</button>
+            <br />
+            <br />
+            <div className="flex items-center justify-center">
+              <label htmlFor="my_modal_7" className="btn btn-success">
+                Verification
+              </label>
+            </div>
+
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box">
+                <div className="bg-base p-3 m-3 grid justify-center">
+                  Send NID/PASSPORT for verification
+                  <PhotoUploadBox></PhotoUploadBox>
+                  <div className="flex justify-end">
+                    <label
+                      className="modal-backdrop btn btn-active btn-error mt-2 pt-1"
+                      htmlFor="my_modal_7"
+                    >
+                      Close
+                    </label>
+                  </div>
+                </div>
+              </div>
+              {/* <label
+                className="modal-backdrop btn btn-active btn-error "
+                htmlFor="my_modal_7"
+              >
+                Close
+              </label> */}
+            </div>
           </div>
         </div>
       </div>
