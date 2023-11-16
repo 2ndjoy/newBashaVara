@@ -1,7 +1,11 @@
 import React from "react";
 import PhotoUploadBox from "./PhotoUploadBox ";
+import toast from "react-hot-toast";
 
 const MyProfile = () => {
+  const sendVerificationData = () => {
+    toast.success("Sent successfully");
+  };
   return (
     <div>
       <div className="hero min-h-screen text-center">
@@ -35,6 +39,13 @@ const MyProfile = () => {
                   Send NID/PASSPORT for verification
                   <PhotoUploadBox></PhotoUploadBox>
                   <div className="flex justify-end">
+                    <label
+                      className="modal-backdrop btn btn-active btn-success mx-2 mt-2 pt-1"
+                      htmlFor="my_modal_7"
+                      onClick={sendVerificationData}
+                    >
+                      Send
+                    </label>
                     <label
                       className="modal-backdrop btn btn-active btn-error mt-2 pt-1"
                       htmlFor="my_modal_7"
